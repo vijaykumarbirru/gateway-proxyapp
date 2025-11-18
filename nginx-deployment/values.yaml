@@ -7,7 +7,7 @@ service:
   port: 80
 ingress:
   enabled: true
-  publicSubnets: subnet-0f80f9da8ddbd931b,subnet-030c2766dc3a37649
+  publicSubnets: subnet-0cde07edee3714a8f,subnet-00d7365fa25fffa9f
   annotations:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
