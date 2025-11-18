@@ -15,4 +15,5 @@ ingress:
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80}]'
 forwarder:
   enabled: true
-  upstreamUrl: http://vpce-084d76942bfac6de5-eauucgkz.vpce-svc-0bb1eb5c0f084c21d.us-east-1.vpce.amazonaws.com
+  # upstreamUrl: http://vpce-084d76942bfac6de5-eauucgkz.vpce-svc-0bb1eb5c0f084c21d.us-east-1.vpce.amazonaws.com
+  upstreamUrl: http://vpce-079d6777e13eb6ee5-3sait9nt.vpce-svc-0703c8716a0a86192.us-west-2.vpce.amazonaws.com
