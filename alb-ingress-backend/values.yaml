@@ -1,0 +1,11 @@
+alb:
+  clusterName: "eks-backend"
+  serviceAccountName: "aws-load-balancer-controller"
+  #-- got from eksctl create iamserviceaccount --name=alb-ingress-controller
+  serviceAccountRole: "arn:aws:iam::335082366654:role/eksctl-eks-backend-addon-iamserviceaccount-ku-Role1-5iDhBkMznHDK"
+  privateSubnets: subnet-05827ab7150edb797,subnet-076a4009a9be3fe8f
+  region: us-east-1
+  vpcId: vpc-03b05ff3b8d1ec88a
+
+
+

@@ -1,0 +1,4 @@
+apiVersion: v2
+name: alb-nginx-ingress
+description: Helm chart for ALB and NGINX ingress controllers
+version: 0.1.0

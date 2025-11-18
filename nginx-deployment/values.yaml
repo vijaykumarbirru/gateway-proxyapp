@@ -1,0 +1,18 @@
+replicaCount: 2
+image:
+  repository: nginx
+  tag: latest
+service:
+  type: ClusterIP
+  port: 80
+ingress:
+  enabled: true
+  publicSubnets: subnet-0f80f9da8ddbd931b,subnet-030c2766dc3a37649
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80}]'
+forwarder:
+  enabled: true
+  upstreamUrl: http://vpce-084d76942bfac6de5-eauucgkz.vpce-svc-0bb1eb5c0f084c21d.us-east-1.vpce.amazonaws.com
