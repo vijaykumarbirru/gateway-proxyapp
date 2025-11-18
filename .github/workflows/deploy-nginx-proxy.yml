@@ -3,7 +3,7 @@ name: Deploy NGINX deployment with ingress ALB
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
