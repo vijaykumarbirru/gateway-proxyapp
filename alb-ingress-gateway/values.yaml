@@ -2,9 +2,9 @@ alb:
   clusterName: "eks-gateway"
   serviceAccountName: "aws-load-balancer-controller"
   #-- got from eksctl create iamserviceaccount --name=alb-ingress-controller
-  serviceAccountRole: "arn:aws:iam::335082366654:role/eksctl-eks-backend-addon-iamserviceaccount-ku-Role1-5iDhBkMznHDK"
-  region: us-east-1
-  vpcId: vpc-04c3335fc9117bf02
+  # serviceAccountRole: "arn:aws:iam::335082366654:role/eksctl-eks-backend-addon-iamserviceaccount-ku-Role1-5iDhBkMznHDK"
+  region: us-west-2
+  vpcId: vpc-090feb488bedbcb62
 
 
 
