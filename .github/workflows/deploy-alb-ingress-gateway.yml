@@ -27,7 +27,15 @@ jobs:
       - name: Update kubeconfig for EKS cluster
         run: |
           aws eks update-kubeconfig --region ${{ secrets.AWS_REGION }} --name ${{ secrets.EKS_GATEWAY_CLUSTER_NAME }}
+          
+      - name: Setup kubectl
+        uses: azure/setup-kubectl@v3
+        with:
+          version: 'v1.29.0'
 
+      - name: Apply CRDS
+        run: |
+          kubectl apply -k "github.com/aws/eks-charts/stable/aws-load-balancer-controller/crds?ref=master"
       - name: Set up Helm
         uses: azure/setup-helm@v3
         with:
