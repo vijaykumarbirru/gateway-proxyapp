@@ -1,0 +1,39 @@
+name: Helm Charts CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  helm-lint-package:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Helm
+        uses: azure/setup-helm@v3
+        with:
+          version: v3.12.0
+
+      - name: Lint Helm charts
+        run: |
+          helm lint helm-charts/alb-nginx-ingress
+          helm lint helm-charts/spring-boot-app
+
+      - name: Package Helm charts
+        run: |
+          mkdir -p packaged-charts
+          helm package helm-charts/alb-nginx-ingress --destination packaged-charts
+          helm package helm-charts/spring-boot-app --destination packaged-charts
+
+      - name: Upload packaged charts as artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: helm-packages
+          path: packaged-charts
