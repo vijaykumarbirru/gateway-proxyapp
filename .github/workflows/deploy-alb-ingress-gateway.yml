@@ -3,7 +3,7 @@ name: Deploy ALB Gateway ingress
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
