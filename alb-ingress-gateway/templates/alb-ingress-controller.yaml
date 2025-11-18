@@ -7,8 +7,8 @@ metadata:
     app.kubernetes.io/name: aws-load-balancer-controller
   name: {{ .Values.alb.serviceAccountName }}
   namespace: kube-system
-  annotations:
-    eks.amazonaws.com/role-arn: {{ .Values.alb.serviceAccountRole }}
+  # annotations:
+  #   eks.amazonaws.com/role-arn: {{ .Values.alb.serviceAccountRole }}
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
